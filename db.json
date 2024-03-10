@@ -1,0 +1,57 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Laut Bercerita",
+      "author": "Leila S. Chudori",
+      "description": "Buku ini terdiri atas dua bagian. Bagian pertama mengambil sudut pandang seorang mahasiswa aktivis bernama Laut, menceritakan bagaimana Laut dan kawan-kawannya menyusun rencana, berpindah-pindah dalam pelarian, hingga tertangkap oleh pasukan rahasia. Sedangkan bagian kedua dikisahkan oleh Asmara, adik Laut. Bagian kedua mewakili perasaan keluarga korban penghilangan paksa, bagaimana pencarian mereka terhadap kerabat mereka yang tak pernah kembali. Buku ini ditulis sebagai bentuk tribute bagi para aktivis yang diculik, yang kembali, dan yang tak kembali dan keluarga yang terus menerus sampai sekarang mencari-cari jawaban. Novel ini merupakan perwujudan dalam bentuk fiksi bahwa kita sebagai bangsa Indonesia tidak boleh melupakan sejarah yang telah membentuk sekaligus menjadi tumpuan bangsa Ini. Novel ini juga mengajak pembaca menguak misteri-misteri bangsa ini yang mana tidak diajarkan di sekolah. Walaupun novel ini adalah fiksi, laut bercerita menunjukkan kepada pembaca bahwa negeri ini pernah memasuki masa pemerintahan yang kelam.",
+      "category": "Novel",
+      "Synopsis": "Laut Bercerita, novel terbaru Leila S. Chudori, bertutur tentang kisah keluarga yang kehilangan, sekumpulan sahabat yang merasakan kekosongan di dada, sekelompok orang yang gemar menyiksa dan lancar berkhianat, sejumlah keluarga yang mencari kejelasan makam anaknya, dan tentang cinta yang tak akan luntur.",
+      "status": "Best Seller",
+      "price": 50000,
+      "img": "laut_bercerita.jpg",
+      "stock": 10
+    },
+    {
+      "id": "2",
+      "title": "Demon Slayer: Kimetsu no Yaiba 17",
+      "author": "Koyoharu Gotouge",
+      "description": "Pasukan Kisatsutai menyerbu “Kastil Tanpa Batas” untuk mengalahkan Muzan. Shinobu harus menjalani pertarungan yang alot dan merugikan, melawan Jyogen no Ni Doma karena ternyata racunnya tidak mempan terhadap musuh. Apakah di akhir dia berhasil membalaskan dendam sang kakak? Di sisi lain, Zenitsu juga bertemu dengan seorang iblis yang dikenalnya…!?,Demon Slayer adalah komik Jepang terkenal karya Koyoharu Gatouge yang sangat terkenal di Jepang. Komik ini kemudian diadaptasi menjadi serial animasi televisi yang sama-sama sukses di kalangan penggemar anime. Serial komik Ini bercerita tentang seorang remaja Tanjiro Kamado yang mengalami insiden naas. Setelah apa yang terjadi dengan keluarganya yang dibantai dan adik perempuannya, Nezuko, berubah menjadi iblis, ia berusaha menjadi pembunuh iblis. Mengambil latar waktu Jepang era Taisho, di mana terdapat sebuah organisasi rahasia yang dikenal sebagai Korps Pembunuh Setan. Organisasi itu telah melakukan perang rahasia melawan setan selama berabad-abad. Iblis adalah mantan manusia yang diubah menjadi iblis oleh Muzan Kibutsuji yang menyuntikkan mereka dengan darahnya sendiri, dan mereka memakan manusia dan memiliki kemampuan supranatural seperti kekuatan super atau kekuatan yang dapat diperoleh iblis yang disebut 'Seni Setan Darah', dan telah teregenerasi.",
+      "category": "Komik",
+      "status": "Best Seller",
+      "price": 20000,
+      "img": "demon_slayer_17.jpg",
+      "stock": 5
+    },
+    {
+      "id": "3",
+      "title": "Melangkah",
+      "author": "J.S. Khairen",
+      "description": "Novel karya J. S Khairen yang berjudul Melangkah bertemakan tentang petualangan di Indonesia. Tidak hanya itu, cerita dalam novel ini juga mengutamakan kisah pahlawan. Berbeda dari karya-karya yang sebelumnya, di novel ini Khairen memberi sedikit imajinasi yang ia tanamkan. Terdapat 36 episode dan 5 babak.",
+      "category": "Novel",
+      "status": "Best Seller",
+      "price": 60000,
+      "img": "melangkah.jpg",
+      "stock": 3
+    },
+    {
+      "id": "4",
+      "title": "The Girl who Fell Beneath the Sea",
+      "author": "Axie Oh",
+      "description": "Badai mematikan telah merusak tanah kelahiran Mina selama beberapa generasi. Banjir menyapu seluruh desa, sementara perang berdarah dikobarkan untuk memperebutkan sumber daya yang tersisa. Masyarakat di desa Mina memercayai bahwa Dewa Laut mengutuk mereka dengan kematian dan keputusasaan. Dalam upaya untuk menenangkan Dewa Laut, setiap tahun seorang gadis cantik dibuang ke laut untuk menjadi pengantin Dewa Laut, dengan harapan suatu hari pengantin sejati akan dipilih dan mengakhiri penderitaan mereka. Shim Cheong adalah gadis tercantik di desa, sekaligus kekasih Joon. Banyak yang percaya dialah pengantin sejati Dewa Laut Tapi pada malam Cheong hendak dikorbankan, Joon mengikuti Cheong, meski tahu bahwa ikut campur akan dihadiahi hukuman mati. Untuk menyelamatkan kakaknya, Mina terjun ke air menggantikan Cheong. Kecantikan Mina memang tidak sebanding dengan para pengantin terdahulu. Tapi dia sudah tersapu ke Alam Roh. Kini Mina tak punya banyak waktu untuk menemukan Dewa Laut sebelum dirinya sendiri berubah menjadi arwah. Berbekal kemampuan mendongeng dan bantuan para arwah, Mina harus berhasil menemukan Dewa Laut.",
+      "category": "Novel",
+      "status": "Normal",
+      "price": 69000,
+      "img": "The_Girl_who_Fell_Beneath_the_Sea.jpg",
+      "stock": 0
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "Fahmi Nurkamil",
+      "email": "fahmi@gmail.com",
+      "password": "fahmi123"
+    }
+  ]
+}
