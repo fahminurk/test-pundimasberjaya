@@ -30,7 +30,7 @@ export const createAuthSlice: StateCreator<AuthSlice, [], [], AuthSlice> = (
 
 export type IGlobalStore = AuthSlice;
 
-export const STORAGE_KEY = "foothub_storage";
+export const STORAGE_KEY = "auth_store";
 
 export const useAuthStore = create<
   IGlobalStore,

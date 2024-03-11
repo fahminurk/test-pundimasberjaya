@@ -1,9 +1,9 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import BookCard from "../components/BookCard";
+import { api } from "@/lib/axios";
 
-export type Book = {
-  id: number;
+export interface Book {
+  id: string;
   title: string;
   author: string;
   stock: number;
@@ -12,14 +12,14 @@ export type Book = {
   description: string;
   category: string;
   status: string;
-};
+}
 
 const HomePage = () => {
   const [books, setBooks] = useState<Book[]>([]);
 
   const fetchBooks = async () => {
     try {
-      const res = await axios.get("http://localhost:2000/posts");
+      const res = await api.get("/books");
       setBooks(res.data);
     } catch (error) {
       console.log(error);
@@ -41,7 +41,7 @@ const HomePage = () => {
           {books
             .filter((val) => val.status === "Best Seller")
             .map((val) => (
-              <BookCard key={val.id} {...val} />
+              <BookCard key={val.id} val={val} />
             ))}
         </div>
       </div>
@@ -52,7 +52,7 @@ const HomePage = () => {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {books.map((val) => (
-            <BookCard key={val.id} {...val} />
+            <BookCard key={val.id} val={val} />
           ))}
         </div>
       </div>

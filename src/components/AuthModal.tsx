@@ -1,11 +1,12 @@
 import {
-  AlertDialog,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -22,9 +23,11 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { cn } from "@/lib/utils";
+import { api } from "@/lib/axios";
+import { useAuthStore } from "@/store/authStore";
+import { toast } from "sonner";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email(),
   password: z
     .string()
@@ -34,55 +37,61 @@ const formSchema = z.object({
 const AuthModal = () => {
   const [type, setType] = useState<"Login" | "Register">("Login");
   const [show, setShow] = useState<boolean>(false);
+  const { onAuthSuccess } = useAuthStore();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
       password: "",
-      name: "",
     },
   });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     if (type === "Login") {
-      console.log("Login", values);
-    } else {
-      console.log("Register", values);
+      const res = await api
+        .get("/users", { params: { ...values } })
+        .then((res) => res.data)
+        .catch((err) => console.log(err));
+
+      if (res.length) {
+        onAuthSuccess({ user: res[0] });
+        return toast.success("Login success");
+      } else {
+        return toast.error("Invalid email or password");
+      }
+    } else if (type === "Register") {
+      const checkEMail = await api
+        .get("/users", {
+          params: { email: values.email },
+        })
+        .then((res) => res.data.length ?? false)
+        .catch((err) => console.log(err));
+      console.log(checkEMail);
+
+      if (checkEMail) {
+        return toast.error("Email already exists");
+      } else {
+        await api.post("/users", values);
+        toast.success("Register success");
+        setType("Login");
+      }
     }
   }
   return (
-    <AlertDialog>
-      <AlertDialogTrigger>
+    <Dialog>
+      <DialogTrigger>
         <Button>Login</Button>
-      </AlertDialogTrigger>
-      <AlertDialogContent>
-        <AlertDialogHeader>
-          <AlertDialogTitle className="text-3xl font-bold">
-            {type}
-          </AlertDialogTitle>
-          <AlertDialogDescription>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle className="text-3xl font-bold">{type}</DialogTitle>
+          <DialogDescription>
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="space-y-5"
               >
-                {type === "Register" && (
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <Input type="text" placeholder=" " {...field} />
-                        </FormControl>
-                        <FormLabel>Name</FormLabel>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                )}
                 <FormField
                   control={form.control}
                   name="email"
@@ -154,10 +163,10 @@ const AuthModal = () => {
                 </button>
               </p>
             )}
-          </AlertDialogDescription>
-        </AlertDialogHeader>
-      </AlertDialogContent>
-    </AlertDialog>
+          </DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
   );
 };
 

@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "books": [
     {
       "id": "1",
       "title": "Laut Bercerita",
@@ -46,10 +46,14 @@
       "stock": 0
     }
   ],
-  "user": [
+  "users": [
     {
-      "id": 1,
-      "name": "Fahmi Nurkamil",
+      "id": "1",
+      "email": "user@gmail.com",
+      "password": "user123"
+    },
+    {
+      "id": "6a05",
       "email": "fahmi@gmail.com",
       "password": "fahmi123"
     }
