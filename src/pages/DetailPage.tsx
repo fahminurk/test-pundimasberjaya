@@ -58,7 +58,7 @@ const DetailPage = () => {
           <img
             src={`../src/assets/images/${book?.img}`}
             alt=""
-            className="object-cover sm:sticky top-5"
+            className="object-cover sm:sticky top-20"
           />
 
           <div className="sticky top-0 h-max flex flex-col gap-5 p-2">
@@ -98,7 +98,11 @@ const DetailPage = () => {
                   Add to Cart
                 </Button>
               </div>
-              {book?.stock && (
+              {book?.stock === 0 ? (
+                <p className="text-red-500 text-center text-sm ">
+                  Out of Stock
+                </p>
+              ) : (
                 <p className="text-center text-sm my-1">
                   {book.stock} in stock
                 </p>
@@ -109,9 +113,6 @@ const DetailPage = () => {
                 </p>
               )}
             </div>
-            {book?.stock === 0 && (
-              <p className="text-red-500 text-sm ">Out of Stock</p>
-            )}
           </div>
         </div>
       )}
