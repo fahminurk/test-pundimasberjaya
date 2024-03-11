@@ -3,14 +3,11 @@ import { formatToIDR } from "@/lib/utils";
 import React from "react";
 import { useCartStore } from "@/store/cartStore";
 import { toast } from "sonner";
-import { FaArrowRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 const SidebarCheckout: React.FC<{ totalItem: number; subTotal: number }> = ({
   totalItem,
   subTotal,
 }) => {
-  const nav = useNavigate();
   const { cart } = useCartStore();
   return (
     <>
